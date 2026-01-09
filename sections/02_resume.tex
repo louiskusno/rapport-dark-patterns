@@ -1,19 +1,18 @@
 \section*{Résumé}
 \subsubsection*{Contexte scientifique :}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\small\color{red}\textit{Préciser ici le contexte scientifique du projet (4-6 lignes)}} 		% Contexte scientifique
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+La personnalisation des contenus et les « dark patterns » sont omniprésents, influençant les choix des utilisateurs de manière opaque. Qu'il s'agisse de prix variant selon le modèle de smartphone, de classements de recherche divergents ou de compteurs de stock suspects, ces pratiques exploitent les biais cognitifs. L'analyse à grande échelle par des bots est limitée par les systèmes anti-fraude des plateformes. STETOSCOPE répond à ce défi par le crowdsourcing, collectant des données réelles (captures d'écran) auprès d'utilisateurs humains pour auditer la transparence des plateforme sur le Web et le mobile.
 
 \subsubsection*{Objectifs :}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\small\color{red}\textit{Préciser ici les objectifs techniques et scientifiques (4-6 lignes)}} 	% Objectifs
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Le projet vise à auditer des plateformes majeures (Amazon, Booking, AliExpress\dots) pour détecter les manipulations différentes : la personnalisation des prix, le tri biaisé des résultats de recherche, la véracité des compteurs et les faux rabais promotionnels. Pour atteindre ces buts, le projet consistera à faire évoluer STETOSCOPE vers un outil multi-plateforme (Android, iOS, Web) et à automatiser l'extraction de données complexes.
 
 \subsubsection*{Méthodologie :}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\small\color{red}\textit{Préciser ici les outils et méthodes proposés pour 
-atteindre les objectifs (4-6 lignes)}} 										% Méthodologie
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item \textbf{Conception des protocoles et tâches :} Définition de scénarios d'étude via l'interface d'administration de STETOSCOPE.
+    \item \textbf{Extraction par LLM :} Développement de scripts Python utilisant des modèles de vision (OpenAI) pour extraire des données structurées (JSON/CSV) à partir des captures d'écran, permettant de récupérer les données complexes.
+    \item \textbf{Visualisation avancée :} Utilisation de Power BI pour analyser et visualiser les données extraites.
+    \item \textbf{Extension de STETOSCOPE :} Création d'une interface Web de STETOSCOPE pour intégrer les utilisateurs iOS et Desktop.
+    \item \textbf{Organisation de campagnes :} Mise en œuvre des protocoles auprès d'une population réelle de participants.
+\end{itemize}
