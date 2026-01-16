@@ -1,0 +1,19 @@
+\section{État de l'art}
+
+\subsection{La collecte de données et la personnalisation}
+
+Le profilage est la norme sur Internet. Des études récentes montrent que même les assistants vocaux profilent les utilisateurs pour cibler les publicités. Pourtant, déterminer précisément quelles informations sont collectées reste un défi. Des discriminations de prix (proposer un prix différent pour le même produit selon l'utilisateur) et de recherche (ordonner les résultats différemment pour influencer l'achat) ont été documentées, mais leurs causes racines restent mal comprises.
+
+\subsection{Les outils de mesure existants}
+
+Les outils actuels pour détecter les manipulations se classent en plusieurs catégories :
+
+\begin{itemize}
+    \item \textbf{Systèmes basés sur des règles :} Ils scannent le code des pages web à la recherche de signaux prédéfinis (ex : bannières de cookies trompeuses). Cette méthode échoue face aux tactiques subtiles ou changeantes.
+    
+    \item \textbf{Systèmes basés sur les données (Machine Learning) :} Ils utilisent des modèles pour identifier visuellement ou textuellement des dark patterns.
+    
+    \item \textbf{Approches hybrides :} Outils comme UI Guard qui analysent à la fois la mise en page et le langage.
+\end{itemize}
+
+Cependant, avec la migration massive des usages vers le mobile, l'automatisation de ces audits est devenue ardue, les plateformes utilisant des techniques de « fingerprinting » avancées pour exclure tout trafic non-humain. C'est ici que l'approche participative de STETOSCOPE se distingue, en réintégrant l'humain dans la boucle de collecte.

@@ -1,0 +1,41 @@
+\section{Campagnes de Collecte et Résultats}
+
+Nous avons mené des campagnes préliminaires entre novembre et décembre 2025 sur plusieurs plateformes (AliExpress, Amazon, Booking, Temu, etc.). Voici les principaux résultats obtenus.
+
+\subsection{Discrimination par les prix (AliExpress)}
+
+L'objectif était de vérifier si le prix d'un même article variait selon l'utilisateur.
+
+\begin{itemize}
+    \item \textbf{Résultat :} AliExpress est la plateforme où ce comportement est le plus flagrant. Pour un même modèle d'écouteurs, les prix affichés variaient entre 3€ et 8,50€ selon les utilisateurs.
+    
+    \item \textbf{Analyse :} Aucune corrélation n'a été trouvée avec le modèle de smartphone utilisé, suggérant une personnalisation basée sur le profil utilisateur ou l'historique.
+\end{itemize}
+
+\subsection{Discrimination de recherche (Amazon)}
+
+Cette campagne visait à analyser l'ordre des résultats pour une recherche identique (ex : « ordinateur portable »).
+
+\begin{itemize}
+    \item \textbf{Résultat :} Une grande disparité a été observée. Le prix moyen des 3 premiers résultats varie considérablement d'un utilisateur à l'autre, allant de 235€ à plus de 1100€.
+    
+    \item \textbf{Interprétation :} Cela indique que la plateforme oriente certains utilisateurs vers des gammes de produits beaucoup plus chères dès les premiers résultats.
+\end{itemize}
+
+\subsection{Fausses promotions (Temu \& Black Friday)}
+
+Nous avons analysé l'évolution des prix et des promotions affichées avant, pendant et après le Black Friday.
+
+\begin{itemize}
+    \item \textbf{Résultat :} Des pratiques abusives ont été détectées sur Temu. Un article affiché à 136€ avec une réduction de « -72\% » pendant le Black Friday a été retrouvé à 150€ après l'événement.
+    
+    \item \textbf{Constat :} La réduction affichée (-72\%) était totalement décorrélée de la variation réelle du prix, constituant potentiellement une pratique commerciale trompeuse utilisant des dark patterns (urgence, couleurs vives).
+\end{itemize}
+
+\subsection{Compteurs incohérents (Booking)}
+
+L'analyse des messages incitatifs (« Plus que 2 chambres disponibles », « 10 personnes regardent cet hôtel ») a révélé des incohérences.
+
+\begin{itemize}
+    \item \textbf{Résultat :} Sur Booking.com, un compteur d'expérience a montré une valeur décroissante au fil du temps, ce qui est illogique pour un compteur cumulatif, suggérant soit un bug, soit un compteur factice.
+\end{itemize}
