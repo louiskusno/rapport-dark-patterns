@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+\geometry{a4paper, margin=2.5cm}
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{NOTE ÉTHIQUE}
+
+\vspace{0.5cm}
+
+\large \textbf{Analyse de la personnalisation et des dark patterns via la plateforme crowdsourcing STETOSCOPE}
+
+\vspace{0.5cm}
+
+\normalsize
+Louis KUSNO, Melisse COCHET, Jixiang SUN
+
+\medskip
+
+Institut National des Sciences Appliquées, Lyon, FRANCE
+
+\vspace{0.3cm}
+\end{center}
+
+\section*{Introduction}
+
+Ce projet P-SAT s'inscrit dans une démarche de transparence algorithmique et de protection des consommateurs face aux pratiques potentiellement manipulatrices du commerce électronique. En utilisant STETOSCOPE, une plateforme de crowdsourcing développée initialement par Antoine Vastel~\cite{stetoscope}, nous cherchons à auditer les pratiques de personnalisation et de dark patterns sur des plateformes majeures (Amazon, Booking, AliExpress, Temu).
+
+Cette approche participative, impliquant de véritables utilisateurs volontaires, soulève des questions éthiques fondamentales que nous abordons dans cette note : la protection de la vie privée, le consentement éclairé, le cadre légal de nos investigations, et l'impact sociétal de nos recherches.
+
+\section*{Cadre légal et réglementaire de la discrimination par les prix}
+
+\subsection*{Légalité en France et en Europe}
+
+La discrimination par les prix, consistant à proposer un même produit à des tarifs différents selon les profils utilisateurs, est en principe \textbf{légale} en France et en Europe, sous réserve de respecter plusieurs conditions strictes :
+
+\begin{itemize}
+    \item \textbf{Interdiction de discrimination sur critères protégés :} La différenciation tarifaire est illégale si elle repose sur des critères sensibles tels que l'origine ethnique, le genre, la nationalité, la religion, le handicap ou l'orientation sexuelle. Les citoyens de l'Union Européenne ne doivent pas payer plus cher un produit uniquement en raison de leur nationalité ou pays de résidence.
+    
+    \item \textbf{Transparence obligatoire :} Le Règlement Général sur la Protection des Données (RGPD) impose aux entreprises de :
+    \begin{itemize}
+        \item Informer les utilisateurs lorsque les prix sont personnalisés
+        \item Obtenir un consentement explicite, libre et éclairé pour l'utilisation de données personnelles
+        \item Permettre aux consommateurs de s'opposer au profilage
+    \end{itemize}
+    
+    \item \textbf{Directive Omnibus et transparence promotionnelle :} Les vendeurs doivent indiquer clairement les prix incluant tous les frais, et fournir le prix le plus bas pratiqué au cours des 30 derniers jours pour les articles en promotion, afin de prévenir les fausses réductions.
+    
+    \item \textbf{Encadrement du profilage automatisé :} L'article 22 du RGPD impose des restrictions strictes sur les décisions automatisées qui affectent significativement les individus, notamment en matière de tarification personnalisée.
+\end{itemize}
+
+De plus, la Commission Européenne prépare actuellement un \textit{Digital Fairness Act}, attendu pour mi-2026, qui renforcera la protection des consommateurs contre les pratiques numériques déloyales, y compris la tarification personnalisée opaque et les dark patterns.
+
+\subsection*{Alternatives éthiques pour les entreprises}
+
+Face à l'encadrement juridique strict de la personnalisation tarifaire, les entreprises disposent d'alternatives légitimes pour optimiser leurs prix :
+
+\begin{itemize}
+    \item \textbf{Discrimination de second degré (par volume)} : Proposer des réductions pour achats groupés ou abonnements, sans cibler individuellement les utilisateurs.
+    
+    \item \textbf{Discrimination de troisième degré (par segmentation transparente)} : Offrir des tarifs réduits pour des catégories explicites (étudiants, seniors, familles nombreuses) avec justification objective et transparente.
+    
+    \item \textbf{Tarification dynamique basée sur des critères objectifs} : Ajuster les prix selon des facteurs non personnels tels que la demande globale, la saisonnalité, les stocks disponibles, ou les coûts logistiques.
+    
+    \item \textbf{Tests A/B publics et consentis} : Mener des expérimentations tarifaires avec transparence et consentement explicite des participants.
+\end{itemize}
+
+Ces méthodes permettent aux entreprises d'optimiser leurs revenus tout en respectant les principes de non-discrimination, de transparence et de consentement éclairé imposés par le cadre réglementaire européen.
+
+\section*{Enjeux éthiques de notre démarche}
+
+\subsection*{Protection de la vie privée des participants}
+
+La collecte de captures d'écran auprès de participants volontaires pose des défis importants en matière de confidentialité. Les captures peuvent contenir des informations personnelles sensibles (historique de navigation, recommandations personnalisées, données de localisation).
+
+\textbf{Mesures mises en place :}
+\begin{itemize}
+    \item \textbf{Floutage automatique} des zones non pertinentes pour l'audit, afin de protéger les données personnelles accidentellement capturées.
+    \item \textbf{Validation par le DPO} (Délégué à la Protection des Données) de l'établissement, garantissant la conformité au RGPD.
+    \item \textbf{Minimisation des données} : seules les informations strictement nécessaires à l'analyse (prix, rang de produits, compteurs) sont extraites et conservées.
+    \item \textbf{Anonymisation} : aucune donnée permettant d'identifier directement un participant n'est associée aux captures d'écran dans les analyses publiées.
+\end{itemize}
+
+\subsection*{Consentement éclairé et transparence}
+
+Contrairement aux pratiques opaques des plateformes que nous étudions, notre démarche repose sur la transparence totale envers les participants.
+
+\textbf{Principes appliqués :}
+\begin{itemize}
+    \item \textbf{Information préalable} : chaque participant reçoit une explication détaillée des objectifs de l'étude, des données collectées, et de leur utilisation.
+    \item \textbf{Consentement libre et révocable} : la participation est entièrement volontaire, et les participants peuvent retirer leur consentement à tout moment.
+    \item \textbf{Transparence méthodologique} : les protocoles d'audit sont documentés et accessibles, permettant aux participants de comprendre précisément leur contribution.
+\end{itemize}
+
+Cette approche contraste fortement avec le manque de transparence des algorithmes de personnalisation que nous cherchons justement à révéler.
+
+\subsection*{Relation avec les plateformes auditées}
+
+Nos audits se font \textit{sans coopération} des plateformes commerciales ciblées, ce qui soulève des questions sur la légitimité de notre démarche.
+
+\textbf{Justifications éthiques :}
+\begin{itemize}
+    \item \textbf{Intérêt public supérieur} : les pratiques de manipulation numérique affectent des millions de consommateurs. L'audit indépendant est nécessaire en l'absence de transparence volontaire des plateformes.
+    
+    \item \textbf{Utilisation de données publiques} : nous n'accédons qu'aux informations publiquement affichées aux utilisateurs connectés, sans contourner de mesures de sécurité ni extraire de données backend.
+    
+    \item \textbf{Démarche scientifique et non commerciale} : nos résultats visent à informer le public et les régulateurs, non à créer un avantage concurrentiel.
+    
+    \item \textbf{Précédents académiques} : de nombreuses recherches en transparence algorithmique utilisent des méthodologies similaires sans accord préalable des plateformes étudiées.
+\end{itemize}
+
+Toutefois, nous reconnaissons une limite fondamentale : notre approche reste une observation de la « boîte noire » algorithmique par son \textit{output} (les prix affichés), sans accès aux critères réels de personnalisation (\textit{input}). Nous ne pouvons donc formuler que des hypothèses sur les mécanismes sous-jacents, sans certitude absolue sur les causes des variations observées.
+
+\subsection*{Impact des résultats sur les utilisateurs finaux}
+
+Notre recherche vise un impact sociétal positif : sensibiliser le public aux pratiques manipulatrices et fournir des preuves empiriques aux régulateurs. Cependant, cet objectif comporte des risques.
+
+\textbf{Bénéfices attendus :}
+\begin{itemize}
+    \item \textbf{Empowerment des consommateurs} : en révélant les dark patterns, nous aidons les utilisateurs à adopter une posture critique face aux interfaces manipulatrices.
+    \item \textbf{Pression régulatoire} : nos données peuvent alimenter le débat public et encourager un renforcement de la protection des consommateurs.
+    \item \textbf{Responsabilisation des plateformes} : la publicité de nos résultats peut inciter les entreprises à adopter des pratiques plus éthiques par crainte de réputation.
+\end{itemize}
+
+\textbf{Risques potentiels :}
+\begin{itemize}
+    \item \textbf{Sophistication des manipulations} : les plateformes pourraient adapter leurs stratégies pour contourner nos méthodes d'audit, rendant les dark patterns plus subtils et difficiles à détecter.
+    \item \textbf{Réactions légales} : certaines plateformes pourraient tenter de restreindre les audits participatifs via des conditions d'utilisation plus contraignantes.
+\end{itemize}
+
+Nous estimons que les bénéfices en termes de transparence et de protection des consommateurs surpassent largement ces risques potentiels.
+
+\section*{Réflexions et perspectives}
+
+Ce projet illustre un changement de paradigme dans l'audit algorithmique : le passage d'approches automatisées (bots) à des méthodologies participatives (crowdsourcing). Cette évolution reflète une réalité technique (les défenses anti-bots sont devenues trop sophistiquées) mais aussi une opportunité démocratique (impliquer les citoyens dans la surveillance des algorithmes qui les affectent).
+
+\textbf{Limites inhérentes à notre approche :}
+\begin{itemize}
+    \item \textbf{Échelle limitée} : le crowdsourcing nécessite une mobilisation humaine significative, limitant la fréquence et l'ampleur des campagnes comparé à l'automatisation.
+    \item \textbf{Biais de sélection} : nos participants volontaires ne représentent pas nécessairement la diversité complète des profils utilisateurs ciblés par les plateformes.
+    \item \textbf{Connaissance partielle} : sans accès aux systèmes internes, nous ne pouvons que supposer les critères de personnalisation utilisés.
+\end{itemize}
+
+\textbf{Perspectives futures :}
+\begin{itemize}
+    \item \textbf{Extension multi-plateforme} : développer une interface Web pour inclure les utilisateurs iOS et Desktop, actuellement exclus de l'application Android.
+    \item \textbf{Amélioration de l'extraction automatique} : exploiter les Large Language Models (LLM) multimodaux pour analyser des captures d'écran de plus en plus complexes.
+    \item \textbf{Collaboration avec les régulateurs} : partager nos méthodologies et résultats avec les autorités de protection des consommateurs (DGCCRF, Commission Européenne).
+    \item \textbf{Sensibilisation publique} : créer des outils grand public permettant aux utilisateurs de détecter eux-mêmes les dark patterns dans leur navigation quotidienne.
+\end{itemize}
+
+\section*{Conclusion}
+
+L'approche crowdsourcing de STETOSCOPE représente une réponse pragmatique et éthique aux défis de l'audit algorithmique moderne. En impliquant directement les utilisateurs concernés, en respectant scrupuleusement leur vie privée, et en visant un impact social positif, nous contribuons à un internet plus transparent et plus équitable.
+
+Les pratiques de personnalisation opaque et de dark patterns que nous étudions exploitent l'asymétrie d'information entre plateformes et consommateurs. Notre mission est de réduire cette asymétrie, en fournissant des preuves tangibles et accessibles des manipulations numériques. Cette transparence est un prérequis indispensable à un marché numérique véritablement équitable.
+
+\vspace{1cm}
+
+\begin{thebibliography}{9}
+
+\bibitem{stetoscope}
+Vastel, A., et al. (2024). 
+\textit{STETOSCOPE: A Platform for Crowdsourcing Algorithmic Transparency Audits}.
+Inria, France.
+
+\end{thebibliography}
+
+\end{document}
