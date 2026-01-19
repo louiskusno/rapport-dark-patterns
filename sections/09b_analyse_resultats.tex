@@ -1,0 +1,33 @@
+\section{Analyse des Résultats}
+
+Dans cette section, nous détaillons les observations issues des différentes campagnes de collecte, en mettant en lumière les pratiques de personnalisation et les dark patterns identifiés.
+
+\subsection{Personnalisation des prix (AliExpress)}
+
+L'objectif était de vérifier si le prix d'un même article variait selon le profil utilisateur ou le terminal utilisé.
+\begin{itemize}
+    \item \textbf{Résultat :} Sur AliExpress, des variations de prix significatives ont été observées. Les prix pouvaient osciller entre 3€ et 8,50€ pour un même produit, sans justification apparente.
+    \item \textbf{Analyse :} Ces écarts suggèrent une personnalisation basée sur l'historique d'achat ou le profil socio-démographique supposé.
+\end{itemize}
+
+\subsection{Classement des résultats (Amazon)}
+
+Cette analyse portait sur l'ordre d'affichage pour une recherche identique (ex : « ordinateur portable »).
+\begin{itemize}
+    \item \textbf{Résultat :} L'ordre des résultats varie considérablement d'un utilisateur à l'autre. Le prix moyen des premiers résultats présentait des écarts allant de 235€ à plus de 1100€.
+    \item \textbf{Impact :} La plateforme peut orienter activement certains profils vers des produits plus onéreux.
+\end{itemize}
+
+\subsection{Incohérence des compteurs (Booking)}
+
+Nous avons étudié la véracité des compteurs de pression (ex: « Plus que 2 chambres disponible »).
+\begin{itemize}
+    \item \textbf{Constat :} Sur Booking.com, des compteurs d'avis ont montré des valeurs \textit{décroissantes} au cours du temps, ce qui est physiquement impossible pour une donnée cumulative.
+\end{itemize}
+
+\subsection{Fausses promotions (Temu \& Black Friday)}
+
+L'analyse saisonnière a révélé des pratiques de prix barrés trompeuses.
+\begin{itemize}
+    \item \textbf{Résultat :} Sur Temu, un article affiché avec une réduction de « -72\% » (136€) pendant le Black Friday a été observé à 150€ peu après, prouvant que le badge de réduction était décorrélé de la réalité tarifaire.
+\end{itemize}
