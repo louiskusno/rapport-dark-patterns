@@ -2,32 +2,18 @@
 
 Dans cette section, nous détaillons les observations issues des différentes campagnes de collecte, en mettant en lumière les pratiques de personnalisation et les dark patterns identifiés.
 
-\subsection{Personnalisation des prix (AliExpress)}
+\subsection{Personnalisation des prix sur AliExpress}
 
-L'objectif était de vérifier si le prix d'un même article variait selon le profil utilisateur ou le terminal utilisé.
-\begin{itemize}
-    \item \textbf{Résultat :} Sur AliExpress, des variations de prix significatives ont été observées. Les prix pouvaient osciller entre 3€ et 8,50€ pour un même produit, sans justification apparente.
-    \item \textbf{Analyse :} Ces écarts suggèrent une personnalisation basée sur l'historique d'achat ou le profil socio-démographique supposé.
-\end{itemize}
+L'une des premières campagnes menées visait à vérifier si le prix d'un même article fluctuait en fonction du profil de l'utilisateur ou du terminal utilisé. Les observations réalisées sur la plateforme AliExpress ont été particulièrement révélatrices à cet égard. Des variations de prix significatives ont été constatées pour des produits identiques, les tarifs oscillant entre 3€ et 8,50€ sans qu'aucune justification apparente, comme d'éventuels frais de livraison différenciés, ne puisse expliquer de tels écarts. L'analyse de ces données suggère fortement la mise en oeuvre d'une stratégie de personnalisation tarifaire basée sur l'historique d'achat ou sur le profil socio-démographique supposé de l'utilisateur.
 
-\subsection{Classement des résultats (Amazon)}
+\subsection{Classement des résultats sur Amazon}
 
-Cette analyse portait sur l'ordre d'affichage pour une recherche identique (ex : « ordinateur portable »).
-\begin{itemize}
-    \item \textbf{Résultat :} L'ordre des résultats varie considérablement d'un utilisateur à l'autre. Le prix moyen des premiers résultats présentait des écarts allant de 235€ à plus de 1100€.
-    \item \textbf{Impact :} La plateforme peut orienter activement certains profils vers des produits plus onéreux.
-\end{itemize}
+Un second axe d'analyse portait sur l'ordre d'affichage des produits lors d'une recherche standardisée, comme celle du terme « ordinateur portable ». Sur Amazon, nous avons observé qu'à requête identique, l'ordre des résultats proposés variait considérablement d'un participant à l'autre. Plus frappant encore, le prix moyen des premiers articles mis en avant présentait des disparités majeures, allant de 235€ à plus de 1100€. Ces résultats tendent à démontrer que la plateforme oriente activement certains profils vers des gammes de produits nettement plus onéreuses, influençant ainsi indirectement les décisions d'achat en limitant la visibilité des alternatives plus économiques.
 
-\subsection{Incohérence des compteurs (Booking)}
+\subsection{Incohérence des compteurs sur Booking.com}
 
-Nous avons étudié la véracité des compteurs de pression (ex: « Plus que 2 chambres disponible »).
-\begin{itemize}
-    \item \textbf{Constat :} Sur Booking.com, des compteurs d'avis ont montré des valeurs \textit{décroissantes} au cours du temps, ce qui est physiquement impossible pour une donnée cumulative.
-\end{itemize}
+Parallèlement aux questions de prix, nous nous sommes penchés sur la véracité des mécanismes de pression sociale, tels que les compteurs d'urgence (ex: « Plus que 2 chambres disponibles »). Sur Booking.com, l'étude des compteurs d'avis a mis en lumière des anomalies flagrantes : nous avons détecté des cas où la valeur affichée décroissait au fil du temps. Cette observation est mathématiquement aberrante pour une donnée cumulative et laisse supposer soit une défaillance technique du système, soit, plus probablement, l'utilisation de compteurs fictifs destinés à simuler une popularité ou une urgence artificielle.
 
-\subsection{Fausses promotions (Temu \& Black Friday)}
+\subsection{Fausses promotions sur Temu lors du Black Friday}
 
-L'analyse saisonnière a révélé des pratiques de prix barrés trompeuses.
-\begin{itemize}
-    \item \textbf{Résultat :} Sur Temu, un article affiché avec une réduction de « -72\% » (136€) pendant le Black Friday a été observé à 150€ peu après, prouvant que le badge de réduction était décorrélé de la réalité tarifaire.
-\end{itemize}
+Enfin, nos analyses saisonnières ont révélé des pratiques de prix barrés potentiellement trompeuses lors d'événements comme le Black Friday. Sur la plateforme Temu, un article affiché avec une remise spectaculaire de « -72\% » pour un prix final de 136€ durant l'événement a été retrouvé à 150€ peu de temps après la fin des promotions. L'absence de corrélation entre la réduction affichée et la réalité de la variation tarifaire suggère que ces badges promotionnels sont souvent utilisés comme de simples artifices visuels pour inciter à l'achat immédiat, sans bénéfice réel pour le consommateur.
