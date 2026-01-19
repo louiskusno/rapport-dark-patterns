@@ -4,11 +4,25 @@ Afin de pallier les limitations précédemment identifiées, nous avons dévelop
 
 \subsection{Extension multi-plateforme (Web)}
 
-Pour étendre la portée de la collecte au-delà de l'écosystème Android, nous avons développé une version Web de STETOSCOPE. 
+Pour étendre la portée de la collecte au-delà de l'écosystème Android, nous avons développé une version Web de STETOSCOPE.
 \begin{itemize}
-    \item \textbf{Technologie :} En interagissant directement avec les API backend existantes du serveur STETOSCOPE, cette extension permet de soumettre des captures d'écran et des métadonnées depuis n'importe quel navigateur.
-    \item \textbf{Impact :} Cela rend la collecte possible sur iOS et sur les navigateurs de bureau (PC/Mac), diversifiant ainsi considérablement les types de profils utilisateurs et les environnements d'audit.
+    \item \textbf{Technologie :} En interagissant directement avec les API backend existantes, cette extension permet de soumettre des captures d'écran depuis n'importe quel navigateur.
+    \item \textbf{Impact :} Cela rend la collecte possible sur iOS et PC, diversifiant les profils utilisateurs (voir Figures \ref{fig:web_list} et \ref{fig:web_interface}).
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/stetoscope web1.png}
+    \caption{Interface de la liste des tâches de la version Web de STETOSCOPE.}
+    \label{fig:web_list}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/stetoscope web2.png}
+    \caption{Interface détaillée d'une tâche sur la version Web (exemple AliExpress).}
+    \label{fig:web_interface}
+\end{figure}
 
 \subsection{Analyse avancée par LLM}
 

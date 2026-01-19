@@ -2,17 +2,43 @@
 
 \subsection{Vue d'ensemble de l'architecture}
 
-STETOSCOPE est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration. Le fonctionnement repose sur quatre étapes clés :
+STETOSCOPE est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/stetoscope workflow.jpg}
+    \caption{Architecture de STETOSCOPE : 1) Campagne configurée, 2) Guidage de l'utilisateur, 3) Capture d'écran, 4) Traitement automatique.}
+    \label{fig:workflow}
+\end{figure}
+
+Le fonctionnement repose sur quatre étapes clés :
 
 \begin{enumerate}
-    \item \textbf{Configuration de la campagne :} L'administrateur définit un scénario, les URL cibles et les instructions de guidage via l'interface web.
-    
-    \item \textbf{Guidage de l'utilisateur :} Le participant sélectionne une campagne dans l'application mobile. Une bannière en surimpression (overlay) le guide pas à pas dans l'application tierce (ex : Amazon) jusqu'à l'information cible.
-    
-    \item \textbf{Capture :} L'utilisateur déclenche manuellement une capture d'écran. Celle-ci est envoyée au serveur avec des métadonnées (modèle du téléphone, horodatage).
-    
-    \item \textbf{Analyse automatique :} Le serveur traite les captures pour extraire les données et générer des visualisations rudimentaires.
+    \item \textbf{Configuration de la campagne :} L'administrateur définit un scénario via l'interface web.
+
+    \item \textbf{Guidage de l'utilisateur :} Le participant sélectionne une campagne dans l'application mobile (voir Figure \ref{fig:mobile_app}). Une bannière en surimpression le guide jusqu'à l'information cible.
+
+    \item \textbf{Capture :} L'utilisateur déclenche manuellement une capture d'écran envoyée au serveur.
+
+    \item \textbf{Analyse automatique :} Le serveur traite les captures pour extraire les données.
 \end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/stetoscope screenshot.jpg}
+        \caption{Interface de l'application mobile listant les campagnes.}
+        \label{fig:mobile_app}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/stetoscope admin dashbord.jpg}
+        \caption{Tableau de bord de l'administrateur pour la gestion et l'analyse.}
+        \label{fig:admin_dashboard}
+    \end{minipage}
+\end{figure}
 
 \subsection{Limites initiales}
 
