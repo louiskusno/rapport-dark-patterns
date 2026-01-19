@@ -1,0 +1,24 @@
+\section{La plateforme STETOSCOPE}
+
+\subsection{Vue d'ensemble de l'architecture}
+
+STETOSCOPE est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration. Le fonctionnement repose sur quatre étapes clés :
+
+\begin{enumerate}
+    \item \textbf{Configuration de la campagne :} L'administrateur définit un scénario, les URL cibles et les instructions de guidage via l'interface web.
+    
+    \item \textbf{Guidage de l'utilisateur :} Le participant sélectionne une campagne dans l'application mobile. Une bannière en surimpression (overlay) le guide pas à pas dans l'application tierce (ex : Amazon) jusqu'à l'information cible.
+    
+    \item \textbf{Capture :} L'utilisateur déclenche manuellement une capture d'écran. Celle-ci est envoyée au serveur avec des métadonnées (modèle du téléphone, horodatage).
+    
+    \item \textbf{Analyse automatique :} Le serveur traite les captures pour extraire les données et générer des visualisations rudimentaires.
+\end{enumerate}
+
+\subsection{Limites initiales}
+
+Bien que fonctionnel, l'outil présentait plusieurs limitations majeures avant notre intervention :
+\begin{itemize}
+    \item \textbf{Extraction rigide :} L'extraction des données (prix, noms de produits) reposait exclusivement sur l'OCR couplé à des expressions régulières (Regex), limitant la flexibilité face à des mises à jour d'interfaces.
+    \item \textbf{Écosystème restreint :} L'application de collecte n'était disponible que sur Android, excluant de fait les utilisateurs d'iOS et les environnements de bureau.
+    \item \textbf{Visualisation basique :} Le tableau de bord intégré ne permettait pas d'analyses croisées complexes ou de filtrage dynamique avancé.
+\end{itemize}

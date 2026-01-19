@@ -1,0 +1,35 @@
+\section{Campagnes de Collecte et Résultats}
+
+Nous avons mené plusieurs campagnes de collecte sur des plateformes majeures (AliExpress, Amazon, Booking, Temu) afin d'auditer la transparence des algorithmes sur Web et mobile.
+
+\subsection{Personnalisation des prix (AliExpress)}
+
+L'objectif était de vérifier si le prix d'un même article variait selon le profil utilisateur ou le terminal utilisé (marque de téléphone).
+\begin{itemize}
+    \item \textbf{Résultat :} Sur AliExpress, des variations de prix significatives ont été observées pour un même produit. Les prix pouvaient osciller entre 3€ et 8,50€ sans justification apparente liée aux frais de livraison.
+    \item \textbf{Analyse :} Ces écarts suggèrent une personnalisation basée sur l'historique d'achat ou le profil socio-démographique supposé de l'utilisateur.
+\end{itemize}
+
+\subsection{Classement des résultats (Amazon)}
+
+Cette campagne analysait l'ordre d'affichage des produits pour une recherche identique (ex : « ordinateur portable »).
+\begin{itemize}
+    \item \textbf{Résultat :} Pour une même requête, l'ordre des résultats varie considérablement d'un utilisateur à l'autre. Le prix moyen des premiers résultats affichés présentait des écarts allant de 235€ à plus de 1100€.
+    \item \textbf{Impact :} La plateforme oriente activement certains utilisateurs vers des produits haut de gamme, limitant ainsi la visibilité des alternatives plus abordables.
+\end{itemize}
+
+\subsection{Incohérence des compteurs (Booking)}
+
+Nous avons étudié la véracité des compteurs de pression (ex: « Plus que 2 chambres », « 10 personnes regardent ») et des compteurs d'expérience vécue.
+\begin{itemize}
+    \item \textbf{Constat :} Sur Booking.com, nous avons détecté des compteurs d'avis dont la valeur \textit{décroissait} au cours du temps, ce qui est mathématiquement impossible pour une donnée cumulative.
+    \item \textbf{Interprétation :} Cela suggère soit un dysfonctionnement technique, soit le déploiement de compteurs fictifs destinés à créer un sentiment d'urgence ou de popularité artificielle.
+\end{itemize}
+
+\subsection{Fausses promotions (Temu \& Black Friday)}
+
+L'analyse a porté sur l'authenticité des rabais affichés lors d'événements commerciaux comme le Black Friday.
+\begin{itemize}
+    \item \textbf{Résultat :} Sur Temu, un article affiché à 136€ avec une réduction de « -72\% » pendant le Black Friday a été observé à 150€ peu après. La réduction affichée ne correspondait à aucune baisse réelle du prix de référence.
+    \item \textbf{Conclusion :} L'utilisation de badges « Black Friday » ou « Noël » sert souvent de simple décorum visuel pour déclencher l'achat, sans avantage financier réel.
+\end{itemize}
