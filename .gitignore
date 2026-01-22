@@ -4,4 +4,8 @@
 *.gz
 *.fls
 *.out
+*.xml
+*.bbl
+*.bcf
+*.blg
 example/
