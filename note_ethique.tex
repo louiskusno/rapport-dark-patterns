@@ -33,17 +33,28 @@
 \end{center}
 
 Le projet que nous avons mené consiste à mettre en évidence les manipulations ou discriminations mises en place par différentes plateformes, et qui ont pour but principal d'inciter l'utilisateur à l'achat. Ces manipulations ne sont pas toujours explicites, il est donc essentiel de sensibiliser le public à ce sujet et de réfléchir à l'éthique de ces pratiques.
+
+\vspace{0.3cm}
+
 L'éthique de la recherche “implique notamment de mener une analyse réflexive sur les enjeux éthiques d'un projet de recherche, en se questionnant notamment sur les finalités, les moyens utilisés et les conséquences du projet” \cite{noauthor_ethique_nodate}. Nous aborderons donc l'éthique des pratiques des plateformes web, puis nous nous concentrerons sur l'éthique de notre projet de recherche. Enfin, nous réfléchirons à l'impact sociétal de notre projet.
 
 \section{Éthique des pratiques web}
 
 La personnalisation des prix consiste à proposer un même produit à des tarifs différents selon les profils utilisateurs. Elle pose un enjeu majeur de transparence vis-à-vis du consommateur, qui doit être informé de ce mécanisme. Cette discrimination est légale en France et en Europe si elle ne repose pas sur des critères sensibles tels que l'origine ethnique, la religion ou le genre. Le fait de ne pas informer le consommateur peut représenter une omission d'information essentielle, et être qualifié de trompeur au regard du droit de la consommation. C'est le code de la consommation qui définit ce qui constitue une pratique commerciale trompeuse ou déloyale.
 
+\vspace{0.3cm}
+
 Cette personnalisation de prix n'est possible qu'après la collecte et l'exploitation de données personnelles, ce qui implique le respect du cadre légal en termes de protection des données (RGPD). De manière plus concrète, l'utilisateur doit donner son consentement explicite, libre et clair puis être informé de la finalité et des destinataires de la collecte de ses données \cite{inc-conso_personnalisation_2016}. Dans notre cas, ces données permettent d'affiner le profil numérique du consommateur pour lui proposer des contenus personnalisés susceptibles de l'intéresser. Il peut s'agir des données de navigation, de l' historique d'achats, d'une localisation, du type d'appareil qui, combinés, permettent de dresser un profil précis du consommateur. Dernièrement, l'utilisateur doit avoir la possibilité de s'opposer au profilage.
+
+\vspace{0.3cm}
 
 La Commission Européenne prépare actuellement un Digital Fairness Act, attendu pour mi-2026, qui renforcera la protection des consommateurs contre les pratiques numériques déloyales, y compris la tarification personnalisée opaque et les dark patterns.
 
+\vspace{0.3cm}
+
 Cette personnalisation est pensée et implémentée par des ingénieurs en informatique, et donc en tant qu'étudiant dans ce domaine, nous y sommes directement impliqués. Mais avons-nous réellement le contrôle total ? C'est une question légitime à se poser, car dans un contexte commercial, les développeurs informatiques n'ont pas toujours la maîtrise des systèmes qu'ils implémentent, car leur finalité est souvent contrôlée par des objectifs économiques. Ils peuvent aussi développer des algorithmes dans un différent domaine, sans avoir pleinement conscience de leur implication éthique et de leur réutilisation dans la personnalisation de contenu. Il ne faut cependant pas négliger la responsabilité que nous pourrions avoir dans ces mécanismes, car nos choix d'implémentation dans les données collectées, leur croisement ou encore les paramètres utilisés auront un impact direct sur la société.
+
+\vspace{0.3cm}
 
 Ce projet a contribué à notre formation et à notre sensibilisation sur ces enjeux, deux points qui paraissent essentiels pour changer les choses. Ainsi, nous serions en mesure d'identifier les dérives potentielles, de remettre en question les pratiques qui nous sont imposées et de privilégier des solutions transparentes et respectueuses vis-à-vis du traitement des données. L'objectif est que cette prise de conscience soit faite pour l'ensemble des étudiants, afin de former de futurs ingénieurs attentifs à ces enjeux.
 
@@ -51,9 +62,15 @@ Ce projet a contribué à notre formation et à notre sensibilisation sur ces en
 
 D'un point de vue scientifique, nous avons utilisé le crowdsourcing à défaut des robots. Celui-ci nous a permis d'observer les interfaces telles qu'elles sont réellement vécues par des utilisateurs lambdas avec un historique de navigation. Il permet donc de révéler des manipulations qui peuvent rester invisibles lors d'une collecte automatisée. De plus, il mobilise la navigation naturelle des utilisateurs plutôt que du trafic régulier généré par des robots, ce qui permet de réduire l'empreinte carbone de nos recherches. Enfin, les bots peuvent être intrusifs et nuire aux systèmes observés, ce que le crowdsourcing permet d'éviter.
 
+\vspace{0.3cm}
+
 Nos travaux pourront servir de point de comparaison pour les études menées avec des robots, en apportant une référence issue de situations réelles. Il sera ainsi possible de vérifier la pertinence et la représentativité des résultats obtenus par des collectes artificielles. En croisant ces deux approches, il sera plus facile de comprendre les limites de chaque méthodologie et d'obtenir une version complète et fidèle sur la personnalisation de contenu.
 
+\vspace{0.3cm}
+
 Cependant, ce choix du crowdsourcing déplace le risque éthique sur la protection des données récoltées. En effet, notre application Stetoscope récolte des captures d'écran faites par les utilisateurs. Elles peuvent contenir des données personnelles sensibles et nous devons donc garantir à l'utilisateur qu'il a le contrôle sur ce qu'il nous partage. Par exemple, s' il voit une pub qu'il ne veut pas partager, il peut revenir sur l'application et refaire la campagne sans nécessairement envoyer de captures. De plus, c'est lui qui décide de cliquer sur le bouton “Capturer” lorsque tout lui convient. Les captures récoltées sont pseudo-anonymes, car elles ne contiennent pas de données directement identifiantes, mais des métadonnées : la version d'android, la marque, le model et la taille de l'appareil, et dans certains cas la localisation. Nous avons également informé les participants sur le but de la récolte de données et de comment les captures allaient être traitées.
+
+\vspace{0.3cm}
 
 C'est d'ailleurs une question que nous nous sommes posée : Comment traiter un grand nombre de données visuelles tout en préservant leur confidentialité ? Pour le faire de manière rapide et fiable, nous avons recouru à un LLM (un API de OpenAI) qui à un OCR et des reconnaissance de patterns plus avancé qu'un simple regex. Nous avons fait ce choix pour bénéficier des meilleures performances de ce modèle : ceci nous a permis d'extraire les informations utiles des captures comme les prix finaux, les réductions, et les noms des produits de manière automatique et rapide. En considérant le fait que nous allions faire les campagnes de manière régulière et avec beaucoup d'appareils, c'est la solution qui nous a paru la plus efficace. Cependant, en termes d'éthique, ce choix soulève beaucoup de questionnements et peut facilement être remis en cause. Néanmoins, le risque d'identification des utilisateurs demeure limité et seules les informations strictement nécessaires à l'analyse sont extraites, dans une logique de minimisation des données. Ce choix constitue donc un compromis entre efficacité et enjeux éthiques, puisque la transmission de données à un service tiers constitue une perte de contrôle sur les données. Cette réflexion illustre la nécessité, en tant que futurs ingénieurs, de questionner nos choix techniques, et d'en identifier les implications éthiques.
 
@@ -61,9 +78,15 @@ C'est d'ailleurs une question que nous nous sommes posée : Comment traiter un g
 
 Grâce à la personnalisation des contenus, l'utilisateur est davantage incité à acheter les produits qui lui sont proposés, car ceux-ci correspondent à ses centres d'intérêt, à son historique de navigation ou à ses habitudes de consommation. Cette personnalisation peut être présentée comme une amélioration de l'expérience utilisateur, ou être  utilisée pour augmenter les ventes des plateformes. Notre projet a permis de mettre en évidence ce phénomène à la suite de recherches ciblées d'articles, car le prix moyen des premiers résultats varie selon les utilisateurs. On peut donc imaginer que les articles proposés changent en fonction des capacités financières de chacun. De plus, nous avons observé de nombreux compteurs concernant le stock restant ou le nombre d'avis qui n'étaient pas toujours cohérents. Ces mécanismes risquent d'encourager des comportements de surconsommation, en particulier chez des utilisateurs qui sont inconscients de ces pratiques ou qui ont des difficultés à contrôler leurs impulsions d'achat . À plus long terme, ils rentreront dans un cercle vicieux de  consommation accrue et peu réfléchie. \cite{organisation_de_cooperation_et_de_developpement_economiques_personnalisation_2018}
 
+\vspace{0.3cm}
+
 Notre projet prend la forme d'une recherche participative qui peut prendre part à la sensibilisation des utilisateurs. Nous avons notamment organisé une récolte de données avec des étudiants de l'INSA en leur expliquant notre démarche et les mécanismes que nous voulions détecter. Cette prise de conscience peut permettre aux individus de porter un regard plus critique sur les contenus qui leur sont proposés et de questionner leur propre comportement en ligne.
 
+\vspace{0.3cm}
+
 Cependant, cette sensibilisation limitée ne fait pas toujours le poids face aux manipulations qui sont aujourd'hui bien intégrées dans le numérique. Elles exploitent des biais cognitifs puissants tels que la gratification immédiate, l'effet de rareté ou la peur de manquer une opportunité. Ainsi, même lorsqu'ils y sont informés, de nombreux utilisateurs continuent à y être exposés et influencés. Personnellement, ce projet nous a permis de voir concrètement les fausses réductions mises en place pendant le black friday ou Noël. Nous envisageons de limiter nos achats impulsifs pendant ces périodes en vérifiant systématiquement l'historique des prix, et de s'interroger sur la nécessité de l'achat.
+
+\vspace{0.3cm}
 
 Par ailleurs, un changement significatif suppose également d'impliquer les pouvoirs publics et les plateformes elles-mêmes, afin de limiter les stratégies manipulatoires les plus prédatrices. La sensibilisation du public à elle seule nous semble insuffisante, mais nécessaire pour provoquer des changements dans les pratiques numériques.
 
