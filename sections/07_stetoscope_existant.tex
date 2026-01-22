@@ -4,25 +4,25 @@
 
 STETOSCOPE est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration. L'architecture globale, illustrée dans la Figure \ref{fig:workflow}, permet de coordonner les différentes phases du processus de collecte.
 
-\begin{figure}[htbp]
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/stetoscope workflow.jpg}
+    \includegraphics[width=0.7\textwidth]{images/stetoscope workflow.jpg}
     \caption{Architecture de STETOSCOPE : 1) Campagne configurée, 2) Guidage de l'utilisateur, 3) Capture d'écran, 4) Traitement automatique.}
     \label{fig:workflow}
 \end{figure}
 
 Le fonctionnement opérationnel se décline en quatre étapes successives. Tout d'abord, l'administrateur configure une campagne via l'interface web, définissant les scénarios et les instructions de guidage. Ensuite, le participant sélectionne cette campagne dans l'application mobile (voir Figure \ref{fig:mobile_app}), où une bannière en surimpression le guide jusqu'à l'information cible. Une fois l'objectif atteint, l'utilisateur déclenche manuellement une capture d'écran qui est instantanément transmise au serveur backend. Enfin, le serveur traite automatiquement ces captures pour en extraire les données pertinentes et les structurer.
 
-\begin{figure}[htbp]
+\begin{figure}[!ht]
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.2\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/stetoscope screenshot.jpg}
         \caption{Interface de l'application mobile listant les campagnes.}
         \label{fig:mobile_app}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.75\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/stetoscope admin dashbord.jpg}
         \caption{Tableau de bord de l'administrateur pour la gestion et l'analyse.}
