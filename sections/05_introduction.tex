@@ -1,37 +1,5 @@
 \section{Introduction}
 
-\subsection{Contexte}
+L'économie numérique s'appuie massivement sur le profilage des utilisateurs et la personnalisation algorithmique des contenus. En théorie, cette personnalisation vise à améliorer l'expérience utilisateur en proposant des produits, services ou informations adaptés aux préférences individuelles. Cependant, dans la pratique, ces systèmes de recommandation fonctionnent comme des « boîtes noires » : ni les utilisateurs ni les régulateurs ne savent précisément quelles données personnelles alimentent ces profils, ni selon quels critères les décisions d'affichage sont prises.
 
-L'économie numérique contemporaine s'appuie massivement sur le profilage des utilisateurs et la personnalisation algorithmique des contenus. En théorie, cette personnalisation vise à améliorer l'expérience utilisateur en proposant des produits, services ou informations adaptés aux préférences individuelles. Dans la pratique, cependant, ces systèmes de recommandation fonctionnent comme des « boîtes noires » algorithmiques : ni les utilisateurs ni les régulateurs ne savent précisément quelles données personnelles alimentent ces profils, ni selon quels critères les décisions d'affichage sont prises.
-
-Ce manque de transparence crée un terrain propice aux pratiques abusives. On observe ainsi des phénomènes de discrimination par les prix (un même produit affiché à des tarifs différents selon le profil utilisateur) ou de discrimination par la recherche (des résultats ordonnés différemment pour orienter les choix d'achat). S'ajoutent à cela les « dark patterns », ces mécanismes d'interface délibérément conçus pour exploiter les biais cognitifs humains : faux compteurs de stock créant un sentiment d'urgence, promotions fallacieuses, ou encore boutons trompeurs compliquant la désinscription.
-
-\subsection{Problématique}
-
-Auditer ces pratiques à grande échelle représente un défi technique et méthodologique considérable. Les approches traditionnelles d'audit algorithmique reposent sur des robots d'exploration qui simulent le comportement d'utilisateurs en parcourant systématiquement les plateformes Web. Cette méthode présente toutefois trois limitations fondamentales :
-
-\begin{enumerate}
-    \item \textbf{Absence d'historique authentique :} Les bots ne possèdent pas l'historique de navigation, les cookies ou le profil comportemental d'un utilisateur réel. Or, c'est précisément sur ces données que repose la personnalisation. Un bot voit donc une version « neutre » ou « par défaut » de la plateforme, pas la version personnalisée que verrait un utilisateur lambda.
-
-    \item \textbf{Détection et blocage :} Les plateformes commerciales ont développé des systèmes anti-fraude sophistiqués (CAPTCHA, fingerprinting, analyse comportementale) qui détectent et bloquent rapidement le trafic automatisé, rendant les campagnes d'audit à grande échelle techniquement impossibles sans contournement constant.
-
-    \item \textbf{Difficultés sur mobile :} L'automatisation sur smartphones (via des frameworks d'instrumentation comme Frida ou Appium) nécessite souvent un accès root ou des modifications système détectables par les applications. De plus, l'écosystème mobile (iOS notamment) est particulièrement fermé, rendant l'automatisation encore plus complexe que sur le Web.
-\end{enumerate}
-
-Ces obstacles expliquent pourquoi, malgré l'importance sociétale des dark patterns, les études empiriques à grande échelle restent rares, particulièrement sur les plateformes mobiles qui représentent pourtant la majorité du trafic e-commerce.
-
-\subsection{Objectifs du projet}
-
-L'objectif principal de ce P-SAT est de contourner ces limitations méthodologiques en adoptant une approche radicalement différente : le crowdsourcing, ou participation citoyenne volontaire. Plutôt que de chercher à simuler artificiellement des utilisateurs réels, nous mobilisons de véritables utilisateurs humains pour collecter des données authentiques sur leur expérience personnalisée des plateformes.
-
-Concrètement, le projet s'appuie sur STETOSCOPE, une plateforme de collecte collaborative, pour atteindre trois objectifs opérationnels :
-
-\begin{itemize}
-    \item \textbf{Auditer les pratiques de personnalisation} sur des plateformes commerciales majeures (Amazon, Booking.com, AliExpress, Temu) en collectant les données d'affichage réelles vues par différents utilisateurs pour un même produit ou une même recherche.
-
-    \item \textbf{Détecter et documenter des manipulations concrètes} : variations de prix injustifiées (discrimination tarifaire), différences dans l'ordre des résultats de recherche (discrimination algorithmique), faux compteurs de stock ou de vues (dark patterns d'urgence), promotions trompeuses (réductions fictives).
-
-    \item \textbf{Automatiser l'extraction et l'analyse de données} visuelles complexes à partir des captures d'écran fournies par les participants, en exploitant des technologies avancées : reconnaissance optique de caractères (OCR), expressions régulières (Regex), et modèles de vision par apprentissage profond (LLM multimodaux).
-\end{itemize}
-
-Ce projet s'inscrit ainsi dans une démarche de transparence algorithmique et de protection des consommateurs, en fournissant des preuves empiriques des pratiques de manipulation numérique.
+Ce manque de transparence crée un terrain propice aux pratiques abusives. On observe ainsi des phénomènes de discrimination de prix (un même produit affiché à des tarifs différents selon le profil utilisateur), ou de recherche (des résultats ordonnés différemment pour orienter les choix d'achat). S'ajoutent à cela les « dark patterns », des mécanismes d'interface conçus pour exploiter les biais cognitifs humains : faux compteurs de stock créant un sentiment d'urgence, promotions mensongères, ou encore boutons trompeurs compliquant la désinscription.

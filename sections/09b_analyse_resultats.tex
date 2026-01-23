@@ -1,19 +1,133 @@
+\clearpage
 \section{Analyse des Résultats}
 
-Dans cette section, nous détaillons les observations issues des différentes campagnes de collecte, en mettant en lumière les pratiques de personnalisation et les dark patterns identifiés.
+Dans cette section, nous détaillons les observations issues des différentes campagnes de collecte, en mettant en lumière les pratiques de personnalisation et les dark patterns identifiés. Pour le classement des résultats on a constaté que si les résultats diffères par appareils on mettait un \cmark même si le prix moyen ne changeait guère. Ceci est juste une observation, nous allons plonger plus en détail dans les sections suivantes sur les pratique que nous jugeons les plus discriminatoire.
 
-\subsection{Personnalisation des prix sur AliExpress}
+\begin{table}[htbp]
+  \centering
+  \caption{Tableau récapitulatif des mécanismes constatés pour chaque plateforme de e-commerce}
+  \label{tab:comparaison_plateformes}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Plateformes} & \textbf{Personnalisation de Prix} & \textbf{Classement des Résultats} \\
+    \midrule
+    AliExpress           & \cmark                            & \cmark                            \\
+    Amazon               & \xmark                            & \cmark                            \\
+    Booking              & \cmark                            & \cmark                            \\
+    Boulanger            & \xmark                            & \xmark                            \\
+    Cdiscount            & \cmark                            & \xmark                            \\
+    Conforama            & \xmark                            & \xmark                            \\
+    Darty                & \xmark                            & \cmark                            \\
+    Fnac                 & \xmark                            & \cmark                            \\
+    Temu                 & \xmark                            & \cmark                            \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-L'une des premières campagnes menées visait à vérifier si le prix d'un même article fluctuait en fonction du profil de l'utilisateur ou du terminal utilisé. Les observations réalisées sur la plateforme AliExpress ont été particulièrement révélatrices à cet égard. Des variations de prix significatives ont été constatées pour des produits identiques, les tarifs oscillant entre 3€ et 8,50€ sans qu'aucune justification apparente, comme d'éventuels frais de livraison différenciés, ne puisse expliquer de tels écarts. L'analyse de ces données suggère fortement la mise en oeuvre d'une stratégie de personnalisation tarifaire basée sur l'historique d'achat ou sur le profil socio-démographique supposé de l'utilisateur.
+Autre que ces platformes, nous avons également organisé une campagne pour différencier les résultats d'une recherche d'emploi sur Indeed selon le genre de l'utilisateur, mais les mêmes offres sont systématiquement affichés.
 
-\subsection{Classement des résultats sur Amazon}
+De même pour Flixbus, nous avons observé des prix qui fluctuent et une cohérence entre les utilisateurs pour un même trajets.
 
-Un second axe d'analyse portait sur l'ordre d'affichage des produits lors d'une recherche standardisée, comme celle du terme « ordinateur portable ». Sur Amazon, nous avons observé qu'à requête identique, l'ordre des résultats proposés variait considérablement d'un participant à l'autre. Plus frappant encore, le prix moyen des premiers articles mis en avant présentait des disparités majeures, allant de 235€ à plus de 1100€. Ces résultats tendent à démontrer que la plateforme oriente activement certains profils vers des gammes de produits nettement plus onéreuses, influençant ainsi indirectement les décisions d'achat en limitant la visibilité des alternatives plus économiques.
+\subsection{Personnalisation des prix}
 
-\subsection{Incohérence des compteurs sur Booking.com}
+L'une des premières campagnes menées visait à vérifier si le prix d'un même article fluctuait en fonction du profil de l'utilisateur ou dans le temps. 
 
-Parallèlement aux questions de prix, nous nous sommes penchés sur la véracité des mécanismes de pression sociale, tels que les compteurs d'urgence (ex: « Plus que 2 chambres disponibles »). Sur Booking.com, l'étude des compteurs d'avis a mis en lumière des anomalies flagrantes : nous avons détecté des cas où la valeur affichée décroissait au fil du temps. Cette observation est mathématiquement aberrante pour une donnée cumulative et laisse supposer soit une défaillance technique du système, soit, plus probablement, l'utilisation de compteurs fictifs destinés à simuler une popularité ou une urgence artificielle.
+Les observations réalisées sur la plateforme AliExpress pour un casque audio ont été particulièrement révélatrices à cet égard. Du 22 mai 2025 au 12 janvier 2026, son prix a fluctué entre 2,53€ et 10,49€ sans aucune justification apparente (voir figure \ref{fig:capture_ecrans_aliexpress}). De plus, nous avons constaté des différences entre utilisateurs au même moment. Lors de notre campagne du 12 janvier, nous avons récolté 18 captures d'écrans sur 12 modèles d'appareil différents (dont 5 iphones), et on observe une gamme de prix allant de 5,29 € à 10,29 € sur le graphique circulaire \ref{fig:aliexpress-diag-circulaire}. L'analyse de ces données suggère fortement une stratégie de personnalisation tarifaire basée sur l'historique d'achat ou sur le profil supposé de l'utilisateur.
 
-\subsection{Fausses promotions sur Temu lors du Black Friday}
+De la même manière, nous avons observé des réductions différentes selon l'utilisateur pour des écouteurs sur Cdiscount, et des prix de chambres d'hôtels contradictoires sur Booking.
 
-Enfin, nos analyses saisonnières ont révélé des pratiques de prix barrés potentiellement trompeuses lors d'événements comme le Black Friday. Sur la plateforme Temu, un article affiché avec une remise spectaculaire de « -72\% » pour un prix final de 136€ durant l'événement a été retrouvé à 150€ peu de temps après la fin des promotions. L'absence de corrélation entre la réduction affichée et la réalité de la variation tarifaire suggère que ces badges promotionnels sont souvent utilisés comme de simples artifices visuels pour inciter à l'achat immédiat, sans bénéfice réel pour le consommateur.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/aliexpress-1.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/aliexpress-2.jpg}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/aliexpress-3.jpg}
+  \end{subfigure}
+
+  \caption{Preuve de prix différenciés : même produit et même instant, mais tarifs divergents sur AliExpress}
+  \label{fig:capture_ecrans_aliexpress}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{images/aliexpress-diag-circulaire.png}
+  \caption{Données du 12 janvier 2026 pour 18 capture d'écrans et 12 types d'appareilles}
+  \label{aliexpress-diag-circulaire}
+\end{figure}
+
+\subsection{Classement des résultats}
+
+Un second axe d'analyse portait sur la distribution de prix des produits affichés lors d'une recherche standardisée
+
+Comme celle du terme « ordinateur portable » sur Amazon. nous avons observé qu'à requête identique, les prix moyens des premiers articles mis en avant présentait des disparités majeures, allant de 220€ à plus de 1100€. Voir figure \ref{amazon-ordi-cdr}. Ces résultats tendent à démontrer que la plateforme oriente activement certains profils vers des gammes de produits nettement plus onéreuses, influençant ainsi indirectement les décisions d'achat en limitant la visibilité des alternatives plus économiques.
+
+Par ailleurs il est aussi intéressant de noter que sur Booking.com
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/amazon-ordi-cdr.png}
+  \caption{Données du 23 may 2025 jusqu'au 12 janvier 2026 pour 54 capture d'écrans et 22 types d'appareilles}
+  \label{amazon-ordi-cdr}
+\end{figure}
+
+Cependant, comme nos collectes sont limité cet écart n'est pas toujour probabilistiquement significatif. Sur la même plateforme (Amazon) pour une autre recherche de "nintendo switch", nous avons aussi un écart des moyennes des prix de 152 € à 360 € voir figure \ref{amazon-switch-cdr}. Par contre cet différence peut s'expliquer car pour la moyenne la plus basse nous avons eu un article à 19,91 € qui n'est pas apparue ailleurs. Cela met en cause la limite de notre collecte, pour pouvoir avoir de meilleurs résultats il nous faudrait de plus de 50 capture d'écrans au même moment au lieu des 21 que nous avons réussi à avoir.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/amazon-switch-cdr.png}
+  \caption{Données du 12 janvier 2026 pour 21 capture d'écrans et 12 types d'appareilles}
+  \label{amazon-switch-cdr}
+\end{figure}
+
+\subsection{Incohérence des compteurs}
+
+Parallèlement aux questions de prix, nous nous sommes penchés sur la véracité des mécanismes de pression sociale, tels que les compteurs d'urgence par exemple : "Plus que 2 articles disponibles". Cet outils de conversion (un nudge) déclenche deux bias cognitifs. La peur de manquer (FOMO - Fear Of Missing Out) "Si je ne réserve pas maintenant, quelqu'un d'autre va prendre la chambre" ainsi que la validation sociale "Si 20 personnes ont réservé aujourd'hui, c'est que l'hôtel est bien"
+
+Sur Booking.com, l'étude des compteurs d'expériences vécu (qui semble être décrire le nombre d'avis et de commentaire) a mis en lumière différentes tendances. Nous avons détecté un cas où la valeur affichée augmentait ainsi qu'un autre cas où elle diminuait, dans tous les deux cas elle semble suivre une tendance linéaire. Un observation étrange pour une donnée cumulative qui peut nous faire penser à une défaillance technique du système, soit, plus probablement, l'utilisation de compteurs fictifs destinés à simuler une popularité ou une urgence artificielle.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/booking-compteurs.png}
+  \caption{Données du ...}
+  \label{booking-compteurs}
+\end{figure}
+
+Autre part, sur Amazon nous avons constaté que sur certains appareils un nudge est présent avec le nombre d'article disponible alors que sur la majorité des autres mobile la seul le fait que l'article est en stock est affiché.
+
+\subsection{Fausses promotions}
+
+Enfin, nous avons pu observer certaines pratiques déloyales pendant des périodes de fortes affluences, tels que le Black Friday ou Noël. Sur la plateforme Temu, un article affiché avec une remise spectaculaire de 72\% pour un prix final de 136€ durant le Black Friday a été retrouvé à 150€ peu de temps après la fin des promotions. De plus, la promotion est clairement mise en avant avec une bannière rouge "Promos Black Friday" pour inciter à l'achat, alors qu'en réalité il n'y a pas de bénéfice réel pour le consommateur (voir Figure \ref{fig:TemuBF}). Sur Amazon/Fnac/Cdiscount, les offres promotionnelles du Black Friday étaient toujours actives plus d'une semaine après l'événement. Encore aujourd'hui, certaines réductions sont toujours en cours même si elles ont été légèrement abaissées. Par exemple, un sèche cheveux Dyson sur Amazon bénéficie mi-janvier de 14\% de réduction, contre 20\% lors du Black Friday.
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Temu_BlackFriday1.jpg} 
+        \caption{During Black Friday (28/11/2025)}
+        \label{fig:temu_during_bf}
+    \end{subfigure}
+    \hspace{1cm} 
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Temu_BlackFriday2.jpg}
+        \caption{After Black Friday (09/12/2025)}
+        \label{fig:temu_after_bf}
+    \end{subfigure}
+    
+    % --- Légende principale ---
+    \caption{Réduction du Black Friday incohérente par rapport au prix affiché après la période de promotion}
+    \label{fig:TemuBF}
+\end{figure}
+
+Des réductions trompeuses ont aussi pu être capturées pendant la période de Noël sur Conforama et Fnac. En effet, les promotions de certains articles ont disparu en janvier, mais le prix affiché reste le même. Cela suggère que le prix de référence était gonflé artificiellement pour simuler une bonne affaire, et que le prix "soldé" correspondait en réalité au prix habituel de l'article.
+
+\clearpage

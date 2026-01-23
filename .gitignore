@@ -8,4 +8,9 @@
 *.bbl
 *.bcf
 *.blg
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.syncdb
+*.sage-chat
 example/

@@ -1,19 +1,21 @@
 \section{État de l'art}
 
-\subsection{La collecte de données et la personnalisation}
+\subsection{Personnalisation, Profilage et Discrimination}
 
-Le profilage est la norme sur Internet. Des études récentes montrent que même les assistants vocaux profilent les utilisateurs pour cibler les publicités. Pourtant, déterminer précisément quelles informations sont collectées reste un défi. Des discriminations de prix (proposer un prix différent pour le même produit selon l'utilisateur) et de recherche (ordonner les résultats différemment pour influencer l'achat) ont été documentées, mais leurs causes racines restent mal comprises.
+Le profilage des utilisateurs est devenu un pilier de l'économie numérique. Cette collecte massive de données personnelles permet une personnalisation poussée des contenus, mais soulève des défis majeurs en matière de transparence \cite{Melicher2016}. Des études fondatrices ont démontré que cette personnalisation ne se limite pas à l'amélioration de l'expérience utilisateur, mais peut dériver vers des pratiques discriminatoires. 
 
-\subsection{Les outils de mesure existants}
+Hannak et al. \cite{Hannak2014} ont notamment documenté des phénomènes de \textit{discrimination de prix} (variation des tarifs pour un même produit) et de \textit{steering} (réordonnancement des résultats de recherche pour orienter l'utilisateur vers des options plus coûteuses). Malgré ces preuves empiriques, les causes racines — qu'elles soient liées à la localisation, à l'historique de navigation ou au terminal utilisé — restent complexes à isoler sans une collecte de données rigoureuse et à grande échelle.
 
-Les outils actuels pour détecter les manipulations se classent en plusieurs catégories :
+\subsection{Les Dark Patterns}
 
-\begin{itemize}
-    \item \textbf{Systèmes basés sur des règles :} Ils scannent le code des pages web à la recherche de signaux prédéfinis (ex : bannières de cookies trompeuses). Cette méthode échoue face aux tactiques subtiles ou changeantes.
-    
-    \item \textbf{Systèmes basés sur les données (Machine Learning) :} Ils utilisent des modèles pour identifier visuellement ou textuellement des dark patterns.
-    
-    \item \textbf{Approches hybrides :} Outils comme UI Guard qui analysent à la fois la mise en page et le langage.
-\end{itemize}
+Les manipulations d'interface, ou \guillemotleft~dark patterns~\guillemotright, sont désormais omniprésentes. Mathur et al. \cite{Mathur2021} les définissent comme des choix de conception qui exploitent les biais cognitifs pour inciter les utilisateurs à prendre des décisions contraires à leurs intérêts (ex: urgence artificielle, difficulté de désinscription). 
 
-Cependant, avec la migration massive des usages vers le mobile, l'automatisation de ces audits est devenue ardue, les plateformes utilisant des techniques de « fingerprinting » avancées pour exclure tout trafic non-humain. C'est ici que l'approche participative de STETOSCOPE se distingue, en réintégrant l'humain dans la boucle de collecte.
+La recherche actuelle tente de standardiser ces concepts \cite{Gray2023}, afin de les classifier selon leur intention et leur impact sur l'autonomie de l'utilisateur. Loin d'être accidentelles, ces techniques sont utilisées volontairement pour pousser à l'action, entrant souvent en conflit avec le RGPD \cite{Bielova2023}.
+
+\subsection{Outils de Détection et Limites de l'Automatisation}
+
+Pour débusquer ces pratiques, plusieurs méthodes ont été testées par la communauté scientifique. Au début, on s'appuyait surtout sur des règles fixes pour scanner le code source, comme avec l'outil \textit{DarkDialogs} \cite{Kirkman2023}, ce qui fonctionne assez bien pour des éléments statiques comme les bannières de cookies. Mais face à des interfaces de plus en plus dynamiques, les chercheurs se sont tournés vers le Machine Learning \cite{Yada2022} pour essayer de « comprendre » visuellement la manipulation plutôt que de simplement lire le code. Sur mobile, des approches hybrides comme \textit{UI Guard} \cite{Chen2023} vont encore plus loin en combinant vision par ordinateur et analyse de texte (NLP) pour ne rien laisser passer.
+
+Le gros souci aujourd'hui, c'est que les plateformes sont devenues très fortes pour bloquer les robots. Comme l'expliquent Venugopalan et al. \cite{Venugopalan2025}, les techniques de \textit{fingerprinting} permettent désormais aux sites de griller immédiatement si c'est un humain ou un script qui navigue. Cette « course à l'armement » rend les audits automatisés souvent partiels ou carrément faussés, car le contenu affiché à un robot n'est pas forcément le même que celui d'un vrai utilisateur. C'est là que le projet \textit{Stetoscope} \cite{Stetoscope2025} entre en jeu : au lieu de lutter contre les anti-bots, on passe par le crowdsourcing. En utilisant de vraies captures d'écran prises par des gens, on s'assure d'avoir des données authentiques que les algorithmes de détection ne peuvent pas bloquer.
+
+

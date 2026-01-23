@@ -1,17 +1,17 @@
-\section{La plateforme STETOSCOPE}
+\section{La plateforme Stetoscope}
 
 \subsection{Vue d'ensemble de l'architecture}
 
-STETOSCOPE est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration. L'architecture globale, illustrée dans la Figure \ref{fig:workflow}, permet de coordonner les différentes phases du processus de collecte.
+Stetoscope est une plateforme de crowdsourcing initialement développée pour auditer la transparence des plateformes numériques sur Android. Elle se compose d'une application mobile pour les participants et d'un serveur backend pour l'administration. L'architecture globale, illustrée dans la Figure \ref{fig:workflow}, permet de coordonner les différentes phases du processus de collecte.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/stetoscope workflow.jpg}
-    \caption{Architecture de STETOSCOPE : 1) Campagne configurée, 2) Guidage de l'utilisateur, 3) Capture d'écran, 4) Traitement automatique.}
+    \caption{Architecture de Stetoscope : 1) Campagne configurée, 2) Guidage de l'utilisateur, 3) Capture d'écran, 4) Traitement automatique.}
     \label{fig:workflow}
 \end{figure}
 
-Le fonctionnement opérationnel se décline en quatre étapes successives. Tout d'abord, l'administrateur configure une campagne via l'interface web, définissant les scénarios et les instructions de guidage. Ensuite, le participant sélectionne cette campagne dans l'application mobile (voir Figure \ref{fig:mobile_app}), où une bannière en surimpression le guide jusqu'à l'information cible. Une fois l'objectif atteint, l'utilisateur déclenche manuellement une capture d'écran qui est instantanément transmise au serveur backend. Enfin, le serveur traite automatiquement ces captures pour en extraire les données pertinentes et les structurer.
+Le fonctionnement opérationnel se décline en quatre étapes successives. Tout d'abord, l'administrateur configure une campagne via l'interface web (voir Figure \ref{fig:admin_dashboard}), définissant les scénarios et les instructions de guidage. Ensuite, le participant sélectionne cette campagne dans l'application mobile (voir Figure \ref{fig:mobile_app}), où une bannière en surimpression le guide jusqu'à l'information cible. Une fois l'objectif atteint, l'utilisateur déclenche manuellement une capture d'écran qui est instantanément transmise au serveur backend. Enfin, le serveur traite automatiquement ces captures pour en extraire les données pertinentes et les structurer.
 
 \begin{figure}[!ht]
     \centering
@@ -32,4 +32,4 @@ Le fonctionnement opérationnel se décline en quatre étapes successives. Tout 
 
 \subsection{Limites initiales}
 
-Bien que fonctionnel, l'outil présentait plusieurs limitations majeures avant notre intervention. Sur le plan technique, l'extraction des données reposait exclusivement sur la reconnaissance optique de caractères (OCR) couplée à des expressions régulières (Regex). Cette méthode, bien que performante sur des structures fixes, manquait cruellement de flexibilité face aux mises à jour fréquentes des interfaces web. De plus, l'écosystème de collecte était exclusivement restreint aux utilisateurs d'Android, excluant de fait une large population d'utilisateurs d'iOS ou de navigateurs de bureau. Enfin, les capacités de visualisation intégrées au tableau de bord d'origine étaient limitées, ne permettant pas d'effectuer des analyses croisées complexes ou un filtrage dynamique des données récoltées.
+Bien que fonctionnel, l'outil présentait plusieurs limitations que nous avons essayé d'améliorer. Sur le plan technique, l'extraction des données reposait exclusivement sur la reconnaissance optique de caractères (OCR) couplée à des expressions régulières (Regex). Cette méthode, bien que performante sur des structures fixes, manquait cruellement de flexibilité face aux mises à jour fréquentes des interfaces. De plus, l'interface administrateur ne communiquait pas d'informations sur l'avancement de l'analyse, ce qui a compliqué son utilisation. L'écosystème de collecte était exclusivement restreint aux utilisateurs d'Android, excluant de fait une large population d'utilisateurs. Enfin, les capacités de visualisation intégrées au tableau de bord d'origine étaient assez limitées, ne permettant pas d'effectuer des analyses croisées ou un filtrage dynamique.

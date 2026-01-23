@@ -1,28 +1,15 @@
 \section*{Résumé}
 \subsubsection*{Contexte scientifique}
 
-La personnalisation des contenus Web et mobiles ainsi que les « dark patterns » sont désormais omniprésents dans l'écosystème numérique, influençant les choix des utilisateurs de manière opaque et parfois manipulatrice. Ces pratiques se manifestent sous différentes formes : prix variables selon le profil utilisateur, classements de recherche biaisés, ou encore compteurs de stock trompeurs exploitant les biais cognitifs humains.
+La personnalisation des contenus Web et mobiles ainsi que les « dark patterns » sont désormais omniprésents dans l'écosystème numérique, influençant les choix des utilisateurs de manière opaque et parfois manipulatrice. Ces pratiques se manifestent sous différentes formes : prix variables selon le profil utilisateur, classements de recherche biaisés, ou encore compteurs de stock trompeurs exploitant les biais cognitifs humains. L'analyse de ces phénomènes à grande échelle peut être faite à l'aide de robots, mais ils sont souvent limités par les systèmes anti-fraude des plateformes. Stetoscope propose donc une solution innovante à ce défi : une plateforme de crowdsourcing qui collecte des données authentiques sous forme de captures d'écran auprès d'utilisateurs réels. Il  permet ainsi d'auditer la transparence des algorithmes sans déclencher les défenses anti-bots. De plus, les utilisateurs lambdas possèdent un historique de navigation ou des préférences de cookies susceptibles d'influencer la personnalisation de contenu.
 
-L'analyse de ces phénomènes à grande échelle se heurte toutefois à des obstacles techniques majeurs. Les approches traditionnelles basées sur des robots d'exploration sont limitées par les systèmes anti-fraude des plateformes qui détectent et bloquent ces agents automatisés. STETOSCOPE propose une solution innovante à ce défi : une plateforme de crowdsourcing qui collecte des données authentiques (captures d'écran) auprès d'utilisateurs réels, permettant ainsi d'auditer la transparence des algorithmes sur le Web et le mobile sans déclencher les défenses anti-bots.
 
 \subsubsection*{Objectifs}
 
-Ce projet P-SAT vise à auditer les pratiques de manipulation de plusieurs plateformes majeures du commerce en ligne (Amazon, Booking, AliExpress, Temu). Plus spécifiquement, nous cherchons à détecter et quantifier quatre types de manipulations : la discrimination par les prix (personnalisation tarifaire), le tri biaisé des résultats de recherche, la véracité des compteurs d'urgence (stocks limités, nombre de vues), et l'authenticité des rabais promotionnels.
-
-Pour atteindre ces objectifs, le projet s'articule autour de deux axes techniques : d'une part, faire évoluer STETOSCOPE vers un outil véritablement multi-plateforme (Android, iOS, Web) pour élargir la base de participants ; d'autre part, automatiser l'extraction de données complexes à partir des captures d'écran grâce à des techniques avancées (LLM, OCR, vision par ordinateur).
+Ce projet P-SAT vise à auditer les pratiques de manipulation de plusieurs plateformes majeures du commerce en ligne (Amazon, Booking, AliExpress, Temu entre autres). Plus spécifiquement, nous cherchons à détecter et quantifier quatre types de manipulations : la discrimination par les prix (personnalisation tarifaire), le tri biaisé des résultats de recherche, la véracité des compteurs d'urgence (stocks limités, nombre de vues), et l'authenticité des promotions. Pour cela, nous mobiliserons de véritables utilisateurs pour collecter leur expérience sur les plateformes via Stetoscope. Techniquement, nos objectifs seront d'élargir l'utilisation de l'application et d'automatiser l'extraction de données pertinentes à partir des captures d'écrans récoltées.
 
 \subsubsection*{Méthodologie}
 
-La démarche adoptée repose sur cinq piliers complémentaires :
+Pour mener à bien ce projet, nous avons prévu un plan d'action bien concret. Nous commençons par préparer nos campagnes de test directement sur l'interface d'administration de Stetoscope en choisissant les scénarios d'achat et les sites à surveiller. Le gros du travail technique se jouera ensuite sur le traitement des données : nous développons des scripts Python qui s'appuient sur des modèles LLM de vision pour transformer automatiquement les captures d'écran en données structurées. En parallèle, nous nous occupons de l'accès à l'outil aux utilisateurs d'iPhone et d'ordinateurs en développant une interface Web, car l'application n'était disponible que sur Android jusqu'ici. Une fois toutes ces informations en main, nous utiliserons Power BI pour créer des visuels parlants et essayer de dénicher des preuves de discrimination tarifaire ou de tri biaisé. Nous finirons par une campagne de collecte grandeur nature auprès des étudiants de l'INSA pour confronter nos outils à la réalité du terrain.
 
-\begin{itemize}
-    \item \textbf{Conception de protocoles d'audit :} Définition rigoureuse de scénarios d'étude reproductibles via l'interface d'administration de STETOSCOPE, garantissant la cohérence des données collectées.
 
-    \item \textbf{Extraction intelligente par LLM :} Développement de scripts Python exploitant des modèles de vision (type GPT-4 Vision) pour extraire automatiquement des données structurées (JSON/CSV) à partir des captures d'écran.
-
-    \item \textbf{Visualisation et analyse avancées :} Utilisation de Power BI pour transformer les données brutes en visualisations graphiques, pour identifier de potentiels discriminations et représenter les résultats.
-
-    \item \textbf{Extension multi-plateforme :} Développement d'une interface Web complémentaire permettant l'intégration d'utilisateurs iOS et Desktop, jusqu'ici exclus de l'application Android native.
-
-    \item \textbf{Campagne participative :} Organisation et coordination d'une campagne de collecte auprès d'étudiants insaliens volontaires.
-\end{itemize}

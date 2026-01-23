@@ -1,18 +1,61 @@
+\clearpage
 \section{Campagnes de Collecte de Données}
 
-La collecte des données a été structurée autour de trois approches complémentaires, permettant d'obtenir un jeu de données à la fois régulier et ponctuellement riche.
+\subsection{Types de campagnes}
 
-\subsection{Méthodologies de collecte}
+Depuis la plateforme d'administration de Stetoscope, nous avons défini différentes catégories de campagnes. Celles ci sont regroupées dans le tableau ci-dessous : 
 
-\begin{minipage}{0.65\textwidth}
-    La première approche repose sur une collecte quotidienne assurée par les trois membres de l'équipe projet. En utilisant l'application STETOSCOPE au fil de leur navigation personnelle, ils ont pu documenter de nombreux cas de personnalisation des prix rencontrés "en conditions réelles". Cette source de données continue a été complétée par un suivi saisonnier et événementiel rigoureux, ciblant particulièrement les périodes de fortes promotions telles que le Black Friday et les fêtes de Noël. Durant ces phases critiques, l'effort de collecte s'est focalisé sur les articles arborant des labels promotionnels afin d'auditer la véracité des rabais affichés.
+\vspace{2pt}
+  
+\begin{tabularx}{\textwidth}{lX}
+        \toprule
+        \textbf{Nom} & \textbf{Description} \\
+        \midrule
+        Personnalisation des prix & Observation du prix pour un même article \\
+        \addlinespace 
+        Classement des résultats  & Observation des résultats proposés suite à une même recherche d'articles \\
+        \addlinespace
+        Compteurs                 & Observation des compteurs incitant à des actions rapides (nombre d'expériences, stock restant...) \\
+        \addlinespace
+        Personnalisation genrée   & Observation de l’influence du genre sur les résultats d'une recherche \\
+        \addlinespace
+        Black Friday              & Analyse des prix pendant et après le Black Friday \\
+        \addlinespace
+        Offres de Noël            & Analyse des prix avant, pendant et après les offres de Noël \\
+        \bottomrule
+\end{tabularx}
 
-    Enfin, une campagne d'envergure sous forme d'atelier participatif a été organisée à l'INSA Lyon le 12 janvier 2026, en collaboration étroite avec Antoine BOUTET. Cet événement a réuni plus de vingt participants autour d'une présentation pédagogique traitant des dark patterns et des enjeux de la personnalisation algorithmique, ponctuée de sessions interactives (voir Figure \ref{fig:poster}). Pour encourager la participation et garantir un climat convivial, une distribution de pizzas gratuites a été organisée. Sur le plan scientifique, cet atelier a permis de générer un pic massif de données synchronisées, facilitant la comparaison directe des profils et l'identification des biais algorithmiques.
+\vspace{10pt}
+
+Nous avons conduits ces campagnes sur différents types de plateformes que nous avons identifiées avec Antoine. On peut distinguer les plateformes selon 4 catégories :
+
+\begin{itemize}[label=\textbullet]
+  \item E-commerce : AliExpress, Amazon, Boulanger,
+Cdiscount, Conforama, Darty, Fnac, Temu
+  \item Réservation d'hôtels : Booking
+  \item Réservation de transports : Flixbus
+  \item Recrutement : Indeed
+\end{itemize}
+
+Celles-ci seront potentiellement explorées par le PEReN à l'aide de robots, donc l'objectif sera de comparer les résultats obtenus ultérieurement. 
+
+\begin{minipage}[t]{0.65\textwidth}
+\vspace{0pt}
+
+\subsection{Organisation des campagnes}
+
+La collecte des données a été structurée autour de deux approches complémentaires, permettant d'obtenir un jeu de données à la fois régulier et ponctuellement riche.
+
+La première approche repose sur une collecte régulière effectuée avec nos appareils personnels. Les captures pourront ainsi être faites durant différentes périodes et de manière répétée. Nous avons été plus vigilants pendant les périodes de fortes promotions, tels que le Black Friday ou Noël. Le but était donc de comparer l'évolution des prix pour un même article au cours du temps, et de vérifier la véracité des réductions affichées.
+
+La deuxième approche vise à toucher un plus grand nombre d'utilisateurs simultanément. Une campagne a été organisée à l'INSA de Lyon le 12 janvier 2026, avec l'aide de notre tuteur Antoine. Cet événement a réuni plus de vingt participants autour d'une présentation pédagogique traitant des enjeux de la personnalisation, puis d'une collecte de données avec l'application Stetoscope (voir Figure \ref{fig:poster}). Afin d'attirer les étudiants et de rendre le moment plus convivial, le laboratoire de l'INRIA a financé l'achat de pizzas qui ont été distribuées gratuitement pour inciter des participants à venir. Sur le plan scientifique, cet atelier a permis de générer un pic massif de données synchronisées, facilitant la comparaison directe des profils et l'identification des biais algorithmiques.
+
 \end{minipage}
 \hfill
-\begin{minipage}{0.30\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{images/poster.png}
-    \captionof{figure}{Affiche de la campagne de collecte organisée à l'INSA Lyon.}
-    \label{fig:poster}
+\begin{minipage}[t]{0.30\textwidth}
+\vspace{0pt}
+  \centering
+  \includegraphics[width=\textwidth]{images/poster.png}
+  \captionof{figure}{Affiche de la campagne de collecte organisée à l'INSA Lyon.}
+  \label{fig:poster}
 \end{minipage}

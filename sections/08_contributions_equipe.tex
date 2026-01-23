@@ -1,10 +1,17 @@
-\section{Amélioration de STETOSCOPE : Nos Contributions}
+\section{Amélioration de Stetoscope : Nos Contributions}
 
-Afin de pallier les limitations précédemment identifiées, nous avons développé trois axes d'amélioration majeurs qui constituent le cœur de notre apport au projet.
+Afin de pallier les limitations précédemment identifiées, nous avons développé trois axes d'amélioration.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/workflow.png}
+    \caption{Pipeline de traitement des données : de la collecte via Stetoscope à la visualisation Power BI.}
+    \label{fig:workflow}
+\end{figure}
 
 \subsection{Extension multi-plateforme (Web)}
 
-Afin d'étendre la portée de la collecte au-delà de l'écosystème Android, nous avons développé une version Web de STETOSCOPE. Sur le plan technologique, cette extension interagit directement avec les API backend existantes, permettant ainsi de soumettre des captures d'écran et des métadonnées depuis n'importe quel navigateur moderne. L'impact de cette évolution est significatif, puisqu'elle rend la collecte possible sur des plateformes jusqu'alors inaccessibles comme iOS ou les ordinateurs de bureau. Cette versatilité permet de diversifier considérablement les profils utilisateurs et d'enrichir les environnements d'audit (voir Figures \ref{fig:web_list} et \ref{fig:web_interface}).
+Afin d'étendre les collectes au-delà des appareils Android, nous avons développé une version Web de Stetoscope. Sur le plan technologique, cette extension interagit directement avec les API backend existantes, permettant ainsi de soumettre des captures d'écran et des métadonnées depuis n'importe quel navigateur moderne. L'impact de cette évolution est significatif, puisqu'il est maintenant possible de participer aux campagnes depuis un iOS ou un ordinateur. Par conséquent, nous sommes capables d'intégrer n'importe quel utilisateur et de diversifier les appareils étudiés(voir Figures \ref{fig:web_list} et \ref{fig:web_interface}).
 
 \begin{figure}[!ht]
     \centering
@@ -25,11 +32,11 @@ Afin d'étendre la portée de la collecte au-delà de l'écosystème Android, no
 
 \subsection{Analyse avancée par LLM}
 
-L'extraction de données par Regex montrant ses limites face à la versatilité des interfaces de e-commerce, nous avons implémenté un pipeline innovant exploitant les modèles de langage de grande taille (LLM). Le coeur du dispositif repose sur un script Python qui transmet les captures d'écran à l'API d'OpenAI, en utilisant des modèles dotés de capacités de vision. Grâce à une ingénierie de prompt rigoureuse, le modèle est capable d'extraire des informations de manière sémantique. Contrairement à l'approche par Regex, le LLM peut traiter des cas complexes tels que l'identification simultanée de plusieurs produits sur une même capture, l'analyse de l'ordre d'apparition des résultats, ou encore la distinction critique entre les résultats de recherche organiques et les publicités sponsorisées. En sortie, les données sont structurées sous format JSON avant d'être converties en CSV pour faciliter les phases ultérieures d'analyse statistique.
+L'extraction de données par Regex a très vite été insuffisante pour exploiter les résultats, donc nous avons implémenté un pipeline indépendant de Stetoscope qui exploite les grands modèles de langage (LLM). Cette implémentation repose sur un script Python qui transmet les captures d'écran à l'API d'OpenAI. Nous avons fait attention au prompt utilisé pour que le modèle soit capable d'extraire des informations de manière sémantique. Contrairement à l'approche par Regex, le LLM peut traiter des cas complexes tels que l'identification simultanée de plusieurs produits sur une même capture ou l'analyse de l'ordre d'apparition des résultats. En sortie, les données sont structurées sous format JSON avant d'être converties en CSV pour faciliter les phases ultérieures d'analyse statistique.
 
 \subsection{Visualisation et Analyse via Power BI}
 
-Pour transformer la masse de données brutes récoltée en informations stratégiques, nous avons intégré Power BI comme outil pivot de visualisation. Cette solution offre des capacités de filtrage et d'agrégation bien supérieures au tableau de bord d'origine. Désormais, il est possible d'agréger les variations de prix en fonction de critères précis tels que le modèle de smartphone, la localisation géographique ou la période temporelle. L'interactivité des graphiques Power BI permet de mettre rapidement en évidence des corrélations complexes et de documenter de manière visuelle et indiscutable les pratiques de personnalisation algorithmique identifiées au cours du projet (voir Figure \ref{fig:powerbi}).
+Pour transformer les données brutes récoltées, nous avons intégré Power BI comme outil de visualisation. Nous avons choisi cette solution car elle offre de très bonnes capacités de filtrage et d'agrégation, et que nous avions jamais eu l'occasion de l'utiliser. Nous avons donc pu réaliser différents graphiques adaptés aux campagnes pour visualiser les variations de prix selon l'utilisateur ou la période temporelle par exemple. (voir Figure \ref{fig:powerbi}).
 
 \begin{figure}[!ht]
     \centering
@@ -37,3 +44,4 @@ Pour transformer la masse de données brutes récoltée en informations stratég
     \caption{Tableau de bord Power BI présentant l'analyse de la personnalisation des prix sur AliExpress.}
     \label{fig:powerbi}
 \end{figure}
+
